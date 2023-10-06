@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     import("@line/liff").then((liff) => {
       console.log("start liff.init()...");
+      console.log('rocess.env.NEXT_PUBLIC_LIFF_ID', process.env.NEXT_PUBLIC_LIFF_ID)
       // @ts-ignore
       liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID })
         .then(() => {
