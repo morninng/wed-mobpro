@@ -36,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
           // @ts-ignore
           console.log(liff.getLineVersion());
 
+
            // @ts-ignore
           if (!liff.isLoggedIn()) {
              // @ts-ignore
