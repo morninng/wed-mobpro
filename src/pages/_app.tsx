@@ -36,13 +36,23 @@ export default function App({ Component, pageProps }: AppProps) {
           console.log(liff.getOS());
           // @ts-ignore
           console.log(liff.getLineVersion());
-
-
+          // @ts-ignore
+          console.log('liff.isLoggedIn()', liff.isLoggedIn())
            // @ts-ignore
           if (!liff.isLoggedIn()) {
              // @ts-ignore
             liff.login();
         }
+
+        // @ts-ignore
+        if (!liff.isLoggedIn() && !liff.isInClient()) {
+          window.alert('To get an access token, you need to be logged in. Tap the "login" button below and try again.');
+        } else {
+          // @ts-ignore
+            const accessToken = liff.getAccessToken();
+            console.log(accessToken);
+        }
+
 
         })
         .catch((error: any) => {
