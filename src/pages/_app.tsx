@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
       liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID })
         .then(() => {
           console.log("liff.init() done");
-                // @ts-ignore
+          // @ts-ignore
           setLiffObject(liff);
 
           // @ts-ignore
@@ -40,9 +40,10 @@ export default function App({ Component, pageProps }: AppProps) {
           console.log('liff.isLoggedIn()', liff.isLoggedIn())
            // @ts-ignore
           if (!liff.isLoggedIn()) {
-             // @ts-ignore
+            // @ts-ignore
             liff.login();
         }
+
 
         // @ts-ignore
         if (!liff.isLoggedIn() && !liff.isInClient()) {
