@@ -97,7 +97,7 @@ export default function App({ Component, pageProps }: AppProps) {
     alert("message sent");
   })
   .catch((err: any) => {
-    alert("error");
+    alert(`error ${JSON.stringify(err)}`);
   });
 
 
