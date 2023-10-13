@@ -64,7 +64,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
         // @ts-ignore
         liff.getFriendship().then((data) => {
+          console.log(data)
           if (data.friendFlag) {
+
               // something you want to do
           }
       });
