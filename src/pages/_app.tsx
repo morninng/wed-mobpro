@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
           // @ts-ignore
           console.log(liff.getVersion());
           // @ts-ignore
-          console.log(liff.isInClient());
+          alert(liff.isInClient());
           // @ts-ignore
           console.log(liff.isLoggedIn());
           // @ts-ignore
@@ -94,10 +94,10 @@ export default function App({ Component, pageProps }: AppProps) {
     },
   ])
   .then(() => {
-    console.log("message sent");
+    alert("message sent");
   })
   .catch((err: any) => {
-    console.log("error", err);
+    alert("error");
   });
 
 
