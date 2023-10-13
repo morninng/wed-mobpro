@@ -54,6 +54,20 @@ export default function App({ Component, pageProps }: AppProps) {
             console.log(accessToken);
         }
 
+        // @ts-ignore
+        const idToken = liff.getIDToken();
+        console.log(idToken);
+
+        // @ts-ignore
+        const idToken2 = liff.getDecodedIDToken();
+        console.log(idToken2);
+
+        // @ts-ignore
+        liff.getFriendship().then((data) => {
+          if (data.friendFlag) {
+              // something you want to do
+          }
+      });
 
         })
         .catch((error: any) => {
