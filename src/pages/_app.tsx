@@ -71,6 +71,37 @@ export default function App({ Component, pageProps }: AppProps) {
           }
       });
 
+   // @ts-ignore
+      liff.permanentLink
+  .createUrlBy('https://example.com/path1?q1=v1')
+  .then((permanentLink: any) => {
+    // https://liff.line.me/1234567890-AbcdEfgh
+    console.log(permanentLink);
+  });
+   // @ts-ignore
+liff.permanentLink
+  .createUrlBy('https://example.com/path1/path2?q1=v1&q2=v2')
+  .then((permanentLink: any) => {
+    // https://liff.line.me/1234567890-AbcdEfgh/path2?q=2=v2
+    console.log(permanentLink);
+  });
+
+     // @ts-ignore
+  liff.sendMessages([
+    {
+      type: "text",
+      text: "Hello, World!",
+    },
+  ])
+  .then(() => {
+    console.log("message sent");
+  })
+  .catch((err: any) => {
+    console.log("error", err);
+  });
+
+
+
         })
         .catch((error: any) => {
           console.log(`liff.init() failed: ${error}`);
