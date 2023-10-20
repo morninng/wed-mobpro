@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useState, useEffect } from "react";
+import { buildReplyText } from 'line-message-builder'
 
 
 
@@ -16,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     import("@line/liff").then((liff) => {
       console.log("start liff.init()...");
-      console.log('rocess.env.NEXT_PUBLIC_LIFF_ID', process.env.NEXT_PUBLIC_LIFF_ID)
+      console.log('process.env.NEXT_PUBLIC_LIFF_ID', process.env.NEXT_PUBLIC_LIFF_ID)
       // @ts-ignore
       liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID })
         .then(() => {
@@ -42,7 +43,9 @@ export default function App({ Component, pageProps }: AppProps) {
           if (!liff.isLoggedIn()) {
             // @ts-ignore
             liff.login();
-        }
+          }
+          // @ts-ignore
+          liff.sendMessages(buildReplyText(['Send Message']))
 
 
         // @ts-ignore
