@@ -11,7 +11,7 @@ export default function Home() {
 
   const sendMessage = () => {
 
-    liff.init({ liffId: process.env.REACT_APP_LIFF_ID as string }).then(() => {
+    liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID as string }).then(() => {
       if (!liff.isLoggedIn()) {
         liff.login({})
       }
