@@ -20,9 +20,19 @@ export default function Home() {
         if (messages.length > 5) {
           console.error('Cannot send more than 5 messages')
           return
+        }else{
+          console.log('1 message')
+
         }
         // @ts-ignore
         liff.sendMessages(messages)
+        .then(()=>{
+          console.log('success')
+        })
+        .catch((err)=>{
+          console.log('error', err)
+          alert(JSON.stringify(err))
+        })
       }catch(err){
         console.log('dd', err)
         alert(JSON.stringify(err))
@@ -36,7 +46,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
             <button className="button" onClick={sendMessage}>
-        Send Messagedd
+        Send Messagedd kk
       </button>
 
     </main>
