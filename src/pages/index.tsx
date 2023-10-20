@@ -15,13 +15,19 @@ export default function Home() {
       if (!liff.isLoggedIn()) {
         liff.login({})
       }
-      const messages = buildReplyText(['Send Message'])
-      if (messages.length > 5) {
-        console.error('Cannot send more than 5 messages')
-        return
+      try{
+        const messages = buildReplyText(['Send Message'])
+        if (messages.length > 5) {
+          console.error('Cannot send more than 5 messages')
+          return
+        }
+        // @ts-ignore
+        liff.sendMessages(messages)
+      }catch(err){
+        console.log('dd', err)
+        alert(JSON.stringify(err))
       }
-      // @ts-ignore
-      liff.sendMessages(messages)
+
     })
   }
 
@@ -30,7 +36,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
             <button className="button" onClick={sendMessage}>
-        Send Message
+        Send Messagedd
       </button>
 
     </main>
