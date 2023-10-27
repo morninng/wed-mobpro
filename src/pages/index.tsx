@@ -28,9 +28,8 @@ export default function Home() {
     })
     .catch( (error) => {
       // something went wrong before sending a message
-      alert("something wrong happen");
+      alert(`something wrong happen ${JSON.stringify(error)}}`);
     });
-
 
   }
 
