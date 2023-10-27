@@ -13,7 +13,7 @@ export default function Home() {
     liff.shareTargetPicker([
         {
           type: "text",
-          text: "Hello, World!",
+          text: "shareTargetPicker, World!",
         },
       ],
     )
