@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
           // @ts-ignore
           console.log(liff.getVersion());
           // @ts-ignore
-          alert(liff.isInClient());
+          // alert(liff.isInClient());
           // @ts-ignore
           console.log(liff.isLoggedIn());
           // @ts-ignore
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
             liff.login();
           }
           // @ts-ignore
-          liff.sendMessages(buildReplyText(['Send Message']))
+          // liff.sendMessages(buildReplyText(['Send Message']))
 
 
         // @ts-ignore
@@ -90,18 +90,18 @@ export default function App({ Component, pageProps }: AppProps) {
 //   });
 
      // @ts-ignore
-  liff.sendMessages([
-    {
-      type: "text",
-      text: "Hello, World!",
-    },
-  ])
-  .then(() => {
-    alert("message sent");
-  })
-  .catch((err: any) => {
-    alert(`error ${JSON.stringify(err)}`);
-  });
+  // liff.sendMessages([
+  //   {
+  //     type: "text",
+  //     text: "Hello, World!",
+  //   },
+  // ])
+  // .then(() => {
+  //   alert("message sent");
+  // })
+  // .catch((err: any) => {
+  //   alert(`error ${JSON.stringify(err)}`);
+  // });
 
 
 
