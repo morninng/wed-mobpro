@@ -16,9 +16,9 @@ export default function Home() {
         text: "this is a test"
       }
     ])
-      .then(
+      .then(()=>{
         alert("ShareTargetPicker was launched")
-      ).catch(function(res) {
+      }).catch(function(res) {
         alert("Failed to launch ShareTargetPicker")
       })
   }
