@@ -11,16 +11,27 @@ export default function Home() {
 
   const shareTarget = () => {
     liff.shareTargetPicker([
-      {
-        type: "text",
-        text: "this is a test"
+        {
+          type: "text",
+          text: "Hello, World!",
+        },
+      ],
+    )
+    .then( (res: any)=> {
+      if (res) {
+        // succeeded in sending a message through TargetPicker
+        alert(`[${res.status}] Message sent!`);
+      } else {
+        // sending message canceled
+        alert("TargetPicker was closed!");
       }
-    ])
-      .then(()=>{
-        alert("ShareTargetPicker was launched")
-      }).catch(function(res) {
-        alert("Failed to launch ShareTargetPicker")
-      })
+    })
+    .catch( (error) => {
+      // something went wrong before sending a message
+      alert("something wrong happen");
+    });
+
+
   }
 
 
