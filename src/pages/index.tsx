@@ -9,6 +9,21 @@ export default function Home() {
 
 
 
+  const shareTarget = () => {
+    liff.shareTargetPicker([
+      {
+        type: "text",
+        text: "this is a test"
+      }
+    ])
+      .then(
+        alert("ShareTargetPicker was launched")
+      ).catch(function(res) {
+        alert("Failed to launch ShareTargetPicker")
+      })
+  }
+
+
   const sendMessage = () => {
 
     liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID as string }).then(() => {
@@ -25,7 +40,12 @@ export default function Home() {
 
         }
         // @ts-ignore
-        liff.sendMessages(messages)
+        liff.sendMessages([
+          {
+            type: "text",
+            text: "Hello, World!",
+          },
+        ])
         .then(()=>{
           console.log('success')
         })
@@ -47,6 +67,10 @@ export default function Home() {
     >
             <button className="button" onClick={sendMessage}>
         Send Messagedd kk
+      </button>
+<br /><br /><br />
+      <button className="button" onClick={shareTarget}>
+        share target
       </button>
 
     </main>
