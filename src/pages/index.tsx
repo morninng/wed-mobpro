@@ -34,6 +34,32 @@ export default function Home() {
   }
 
 
+
+  const shareImage = () => {
+    liff.shareTargetPicker([
+      {
+        "type": "image",
+        "originalContentUrl": "https://storage.googleapis.com/valid-weaver-296705.appspot.com/group-2/Jz2CukRB7QvCVavBAfI1/pc_cover.jpg?cb=1698395549185",
+        "previewImageUrl": "https://storage.googleapis.com/valid-weaver-296705.appspot.com/group-2/Jz2CukRB7QvCVavBAfI1/pc_cover.jpg?cb=1698395549185"
+      }
+      ],
+    )
+    .then( (res: any)=> {
+      if (res) {
+        // succeeded in sending a message through TargetPicker
+        alert(`[${res.status}] Message sent!`);
+      } else {
+        // sending message canceled
+        alert("TargetPicker was closed!");
+      }
+    })
+    .catch( (error) => {
+      // something went wrong before sending a message
+      alert(`something wrong happen ${JSON.stringify(error)}}`);
+    });
+
+  }
+
   const sendMessage = () => {
 
     liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID as string }).then(() => {
@@ -82,6 +108,11 @@ export default function Home() {
       <button className="button" onClick={shareTarget}>
         share target
       </button>
+      <button className="button" onClick={shareImage}>
+        share image
+      </button>
+
+
 
     </main>
   )
