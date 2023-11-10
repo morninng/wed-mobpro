@@ -24,6 +24,10 @@ export default function DateShare() {
     const message = event.target.value
 
 
+    }
+
+    const shareTarget = (message: string) => {
+
         liff.shareTargetPicker([
             {
               type: "text",
@@ -44,8 +48,15 @@ export default function DateShare() {
           // something went wrong before sending a message
           alert(`something wrong happen ${JSON.stringify(error)}}`);
         });
+    }
 
 
+   const handleChangeText = (event: any) => {
+        setText(event.target.value)
+    }
+
+    const sendText = () => {
+        shareTarget(text)
     }
 
 
@@ -54,7 +65,10 @@ return (
 <form onSubmit={handleSubmit}>
 
 <input type="date" onChange={handleChange}  value="2017-06-01" />
-<input type="submit" value="Submit" />
+
+
+<input type="text" onChange={handleChangeText}  />
+<button type="button" onClick={sendText}> send text</button>
 
 </form>
     </div>
