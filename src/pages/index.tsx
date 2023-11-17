@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import  DateShare from './date'
-import { ShareFormValue} from './form'
+import ShareFormValue from './form'
 import { Inter } from 'next/font/google'
 import { buildReplyText } from 'line-message-builder'
 
