@@ -32,23 +32,19 @@ export default function ShareFormValue() {
 
     const shareTarget = (messages: string[]) => {
 
-      // const liffMessages: {type: string, text: string}[] = messages.map((message)=>{
-      //  return  {
-      //     type: "text",
-      //     text: message,
-      //   }
-      // })
-
+      const liffMessages: {type: string, text: string}[] = messages.map((message)=>{
+       return  {
+          type: "text",
+          text: message,
+        }
+      })
+      const array3 = messages.join("_");
 
         liff.shareTargetPicker([
             {
               type: "text",
-              text: "sss",
+              text: array3,
             },
-            {
-              type: "text",
-              text: "sss",
-            }
           ]
         )
         .then( (res: any)=> {
