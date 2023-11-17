@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import  DateShare from './date'
+import { ShareFormValue} from './form'
 import { Inter } from 'next/font/google'
 import { buildReplyText } from 'line-message-builder'
 
@@ -102,7 +103,7 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <DateShare />
+      <ShareFormValue />
             <button className="button" onClick={sendMessage}>
         Send Messagedd kk
       </button>
