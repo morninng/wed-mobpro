@@ -38,7 +38,7 @@ export default function ShareFormValue() {
           text: message,
         }
       })
-      const array3 = messages.join("_");
+      const array3 = messages.join("\n");
 
         liff.shareTargetPicker([
             {
