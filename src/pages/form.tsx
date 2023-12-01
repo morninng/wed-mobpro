@@ -95,7 +95,7 @@ export default function ShareFormValue() {
         <div> 予約フォーム </div>
         <form>
           <p>日付</p>
-          <input type="date" name="date" onChange={handleChangeDate} value={date}/>
+          <input type="date" name="date"  onChange={handleChangeDate} value={date}/>
           <p>時間</p>
           <input type="time" name="time" onChange={handleChangeTime} value={time}/>
           <p>名前</p>
@@ -104,9 +104,11 @@ export default function ShareFormValue() {
           <input type="text" name="content" onChange={handleChangeContent} value={content}/>
           <p>Freeコメント</p>
           <input type="text" name="comment" onChange={handleChangeFreeComment} value={freeComment}/>
-          <button onClick={handleSubmit}>
-            送信
-          </button>
+          <div style={{textAlign: "center"}}>
+            <button onClick={handleSubmit}>
+              送信
+            </button>
+          </div>
 
         </form>
     </div>
