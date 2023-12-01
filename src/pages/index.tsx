@@ -104,16 +104,6 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
       <ShareFormValue />
-            <button className="button" onClick={sendMessage}>
-        Send Messagedd kk
-      </button>
-<br /><br /><br />
-      <button className="button" onClick={shareTarget}>
-        share target
-      </button>
-      <button className="button" onClick={shareImage}>
-        share image
-      </button>
 
 
 
