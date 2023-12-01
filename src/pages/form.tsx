@@ -23,8 +23,10 @@ export default function ShareFormValue() {
         // alert('A name was submitted: ');
 
 
-        const aaa = `作者は${author}です \n  \
-        メールアドレスは${email}です\n `
+        const aaa = `作者は${author}です \n
+        メールアドレスは${email}ですa \n
+        asdf \n
+        `
         shareTarget(aaa)
       }
 
