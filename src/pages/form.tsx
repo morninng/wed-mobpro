@@ -7,25 +7,30 @@ export default function ShareFormValue() {
     // const [liffObject, setLiffObject] = useState(null);
     // const [liffError, setLiffError] = useState(null);
 
-    const [email, setEmail] = useState('');
-    const [author, setAuthor] = useState('');
+    const [date, setDate] = useState('');
+    const [time, setTime] = useState('');
+    const [name, setName] = useState('');
+    // const [author, setAuthor] = useState('');
+    const [content, setContent] = useState('');
+    const [freeComment, setFreeComment] = useState('');
     // const [password, setPassword] = useState('');
 
     const [text, setText] = useState('')
 
     const handleSubmit = (event: any) => {
       event.preventDefault();
-      console.log("author", author)
-      console.log("email", email)
+      // console.log("author", author)
+      // console.log("email", email)
         // console.log(event)
         // const date = event.target.value
         // console.log(date)
         // alert('A name was submitted: ');
 
 
-        const aaa = `作者は${author}です \n
-        メールアドレスは${email}ですa \n
-        asdf \n
+        const aaa = `申込日時：${date}です
+      時間：${time}です
+      コンテンツ${content}です
+      コメント：${freeComment}です
         `
         shareTarget(aaa)
       }
@@ -61,12 +66,22 @@ export default function ShareFormValue() {
     }
 
 
-   const handleChangeEmail = (event: any) => {
-      setEmail(event.target.value)
+   const handleChangeDate = (event: any) => {
+      setDate(event.target.value)
+    }
+    const handleChangeTime = (event: any) => {
+      setTime(event.target.value)
     }
 
-    const handleChangeAuthor = (event: any) => {
-      setAuthor(event.target.value)
+    const handleChangeName = (event: any) => {
+      setName(event.target.value)
+    }
+
+    const handleChangeContent = (event: any) => {
+      setContent(event.target.value)
+    }
+    const handleChangeFreeComment = (event: any) => {
+      setFreeComment(event.target.value)
     }
 
     // const handleSubmit = (data) => {
@@ -77,14 +92,18 @@ export default function ShareFormValue() {
 
     return (
         <div>
-        <div> ShareFormValue </div>
+        <div> 予約フォーム </div>
         <form>
-
-          <p>タイトルと作者</p>
-          <p>タイトル</p>
-          <input type="text" name="title" onChange={handleChangeEmail} value={email}/>
-          <p>作者</p>
-          <input type="text" name="author" onChange={handleChangeAuthor} value={author}/>
+          <p>日付</p>
+          <input type="date" name="date" onChange={handleChangeDate} value={date}/>
+          <p>時間</p>
+          <input type="time" name="time" onChange={handleChangeTime} value={author}/>
+          <p>名前</p>
+          <input type="text" name="name" onChange={handleChangeName} value={name}/>
+          <p>何をやりたいか</p>
+          <input type="text" name="content" onChange={handleChangeContent} value={content}/>
+          <p>Freeコメント</p>
+          <input type="text" name="comment" onChange={handleChangeFreeComment} value={freeComment}/>
           <button onClick={handleSubmit}>
             send
           </button>
