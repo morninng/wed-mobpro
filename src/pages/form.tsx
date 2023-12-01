@@ -21,7 +21,11 @@ export default function ShareFormValue() {
         // const date = event.target.value
         // console.log(date)
         // alert('A name was submitted: ');
-        shareTarget([author, email])
+
+
+        const aaa = `作者は${author}です \n  \
+        メールアドレスは${email}です\n `
+        shareTarget(aaa)
       }
 
     const handleChange = (event: any) => {
@@ -30,20 +34,12 @@ export default function ShareFormValue() {
         const message = event.target.value
     }
 
-    const shareTarget = (messages: string[]) => {
-
-      const liffMessages: {type: string, text: string}[] = messages.map((message)=>{
-       return  {
-          type: "text",
-          text: message,
-        }
-      })
-      const array3 = messages.join("\n");
+    const shareTarget = (messages: string) => {
 
         liff.shareTargetPicker([
             {
               type: "text",
-              text: array3,
+              text: messages,
             },
           ]
         )
