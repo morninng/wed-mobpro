@@ -27,11 +27,11 @@ export default function ShareFormValue() {
         // alert('A name was submitted: ');
 
 
-        const aaa = `申込日時：${date}です
-      時間：${time}です
-      コンテンツ${content}です
-      コメント：${freeComment}です
-        `
+        const aaa = `申込日時:${date}です \n` +
+                    `時間:${time}です \n` +
+                    `コンテンツ:${content}です\n` +
+                    `コメント:${freeComment}です\n`
+
         shareTarget(aaa)
       }
 
@@ -105,7 +105,7 @@ export default function ShareFormValue() {
           <p>Freeコメント</p>
           <input type="text" name="comment" onChange={handleChangeFreeComment} value={freeComment}/>
           <button onClick={handleSubmit}>
-            send
+            送信
           </button>
 
         </form>
