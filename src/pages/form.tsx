@@ -1,48 +1,24 @@
-
-// import { buildReplyText } from 'line-message-builder'
 import {useState} from 'react'
-// const inter = Inter({ subsets: ['latin'] })
 
 export default function ShareFormValue() {
-    // const [liffObject, setLiffObject] = useState(null);
-    // const [liffError, setLiffError] = useState(null);
 
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [name, setName] = useState('');
-    // const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
     const [freeComment, setFreeComment] = useState('');
-    // const [password, setPassword] = useState('');
-
-    const [text, setText] = useState('')
 
     const handleSubmit = (event: any) => {
       event.preventDefault();
-      // console.log("author", author)
-      // console.log("email", email)
-        // console.log(event)
-        // const date = event.target.value
-        // console.log(date)
-        // alert('A name was submitted: ');
-
-
-        const aaa = `申込日時:${date}です \n` +
-                    `時間:${time}です \n` +
-                    `コンテンツ:${content}です\n` +
-                    `コメント:${freeComment}です\n`
-
+      const aaa = `申込日時:${date}です \n` +
+                  `時間:${time}です \n` +
+                  `コンテンツ:${content}です\n` +
+                  `コメント:${freeComment}です\n`
         shareTarget(aaa)
       }
 
-    const handleChange = (event: any) => {
-        setText(event.target.value)
-        console.log(event.target.value)
-        const message = event.target.value
-    }
 
     const shareTarget = (messages: string) => {
-
         liff.shareTargetPicker([
             {
               type: "text",
@@ -52,19 +28,15 @@ export default function ShareFormValue() {
         )
         .then( (res: any)=> {
           if (res) {
-            // succeeded in sending a message through TargetPicker
             alert(`[${res.status}] Message sent!`);
           } else {
-            // sending message canceled
             alert("TargetPicker was closed!");
           }
         })
         .catch( (error) => {
-          // something went wrong before sending a message
           alert(`something wrong happen ${JSON.stringify(error)}}`);
         });
     }
-
 
    const handleChangeDate = (event: any) => {
       setDate(event.target.value)
@@ -83,12 +55,6 @@ export default function ShareFormValue() {
     const handleChangeFreeComment = (event: any) => {
       setFreeComment(event.target.value)
     }
-
-    // const handleSubmit = (data) => {
-    //   console.log(data)
-    //     // shareTarget(text)
-    // }
-
 
     return (
         <div>
@@ -109,7 +75,6 @@ export default function ShareFormValue() {
               送信
             </button>
           </div>
-
         </form>
     </div>
     )
