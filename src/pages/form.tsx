@@ -97,7 +97,7 @@ export default function ShareFormValue() {
           <p>日付</p>
           <input type="date" name="date" onChange={handleChangeDate} value={date}/>
           <p>時間</p>
-          <input type="time" name="time" onChange={handleChangeTime} value={author}/>
+          <input type="time" name="time" onChange={handleChangeTime} value={time}/>
           <p>名前</p>
           <input type="text" name="name" onChange={handleChangeName} value={name}/>
           <p>何をやりたいか</p>
