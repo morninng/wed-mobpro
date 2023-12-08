@@ -28,7 +28,7 @@ export default function ShareFormValue() {
         )
         .then( (res: any)=> {
           if (res) {
-            alert(`送信成功しました`);
+            window.confirm(`送信成功しました`);
           } else {
             alert("TargetPicker was closed!");
           }
