@@ -28,7 +28,7 @@ export default function ShareFormValue() {
         )
         .then( (res: any)=> {
           if (res) {
-            alert(`[${res.status}] Message sent!`);
+            alert(`送信成功しました`);
           } else {
             alert("TargetPicker was closed!");
           }
