@@ -29,7 +29,7 @@ export default function ShareFormValue() {
         )
         .then( (res: any)=> {
           if (res) {
-            window.confirm(`送信成功しました`);
+            // window.confirm(`送信成功しました`);
             setShowModal(true)
           } else {
             alert("TargetPicker was closed!");
