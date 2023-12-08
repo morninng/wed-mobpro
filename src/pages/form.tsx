@@ -57,9 +57,9 @@ export default function ShareFormValue() {
     const handleChangeFreeComment = (event: any) => {
       setFreeComment(event.target.value)
     }
-    const handleClose = () => {
-      setShowModal(false)
-    }
+    // const handleClose = () => {
+    //   setShowModal(false)
+    // }
 
     return (
         <div>
