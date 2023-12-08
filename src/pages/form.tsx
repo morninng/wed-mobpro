@@ -7,7 +7,7 @@ export default function ShareFormValue() {
     const [name, setName] = useState('');
     const [content, setContent] = useState('');
     const [freeComment, setFreeComment] = useState('');
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = (event: any) => {
       event.preventDefault();
@@ -29,8 +29,8 @@ export default function ShareFormValue() {
         )
         .then( (res: any)=> {
           if (res) {
-            // window.confirm(`送信成功しました`);
-            setShowModal(true)
+            alert(`送信成功しました`);
+            // setShowModal(true)
           } else {
             alert("TargetPicker was closed!");
           }
@@ -81,7 +81,7 @@ export default function ShareFormValue() {
             </button>
           </div>
         </form>
-        {
+        {/* {
           showModal &&
           <div className="modal">
             送信完了しました
@@ -89,7 +89,7 @@ export default function ShareFormValue() {
               閉じる
             </button>
           </div>
-        }
+        } */}
     </div>
     )
   }
