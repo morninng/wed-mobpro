@@ -60,18 +60,18 @@ export default function ShareFormValue() {
         <div>
         <div> 予約フォーム </div>
         <form>
-          <p>日付</p>
-          <input type="date" name="date"  onChange={handleChangeDate} value={date}/>
-          <p>時間</p>
-          <input type="time" name="time" onChange={handleChangeTime} value={time}/>
-          <p>名前</p>
-          <input type="text" name="name" onChange={handleChangeName} value={name}/>
-          <p>何をやりたいか</p>
-          <input type="text" name="content" onChange={handleChangeContent} value={content}/>
-          <p>Freeコメント</p>
-          <input type="text" name="comment" onChange={handleChangeFreeComment} value={freeComment}/>
+          <div>日付</div>
+          <input type="date"  className="form-control" name="date"  onChange={handleChangeDate} value={date}/>
+          <div>時間</div>
+          <input type="time"  className="form-control" name="time" onChange={handleChangeTime} value={time}/>
+          <div>名前</div>
+          <input type="text" className="form-control" name="name" onChange={handleChangeName} value={name}/>
+          <div>何をやりたいか</div>
+          <input type="text"  className="form-control" name="content" onChange={handleChangeContent} value={content}/>
+          <div>Freeコメント</div>
+          <input type="text"  className="form-control" name="comment" onChange={handleChangeFreeComment} value={freeComment}/>
           <div style={{textAlign: "center"}}>
-            <button onClick={handleSubmit}>
+            <button type="button" className="btn btn-primary" onClick={handleSubmit}>
               送信
             </button>
           </div>
